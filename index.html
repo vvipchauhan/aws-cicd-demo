@@ -1,1 +1,774 @@
-Hi, This is Vipin S Chauhan
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vipin Chauhan | Senior Network Security Consultant</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#00a8ff',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              950: '#071e33',
+            },
+            cyber: {
+              dark: '#0a0f1d',
+              card: '#111827',
+              border: '#1f293d',
+              accent: '#00f2fe'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0f1d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+
+    /* Glassmorphism Styles */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(2, 132, 199, 0.5);
+      box-shadow: 0 10px 30px -10px rgba(2, 132, 199, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Cyber Glow Effects */
+    .cyber-glow {
+      box-shadow: 0 0 20px rgba(0, 168, 255, 0.15);
+    }
+
+    /* Print Styles for PDF Export */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        color: #0f172a !important;
+        backdrop-filter: none !important;
+      }
+      .text-slate-300, .text-slate-400, .text-slate-200 {
+        color: #334155 !important;
+      }
+      .text-brand-400, .text-cyan-400 {
+        color: #0284c7 !important;
+      }
+      .bg-slate-900, .bg-slate-950, .bg-cyber-dark {
+        background-color: #ffffff !important;
+      }
+      .badge-print {
+        border: 1px solid #cbd5e1 !important;
+        color: #1e293b !important;
+        background: #f8fafc !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body class="bg-cyber-dark text-slate-100 font-sans antialiased min-h-screen selection:bg-brand-500 selection:text-white">
+
+  <!-- Background Decorative Grid & Blur Orbs -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden no-print">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#1f293d_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-brand-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 pointer-events-none">
+    <i class="fa-solid me-1" id="toast-icon"></i>
+    <span id="toast-message" class="text-sm font-medium">Action successful</span>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 w-full glass-card border-b border-slate-800/80 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo / Name Badge -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brand-500/20">
+            VC
+          </div>
+          <div>
+            <a href="#hero" class="text-lg font-bold tracking-tight text-white hover:text-brand-400 transition">VIPIN CHAUHAN</a>
+            <p class="text-xs text-brand-400 font-mono hidden sm:block">Network Security Consultant</p>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium">
+          <a href="#summary" class="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Summary</a>
+          <a href="#certifications" class="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Certifications</a>
+          <a href="#experience" class="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Experience</a>
+          <a href="#skills" class="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Skills & Domains</a>
+          <a href="#education" class="px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition">Education</a>
+        </nav>
+
+        <!-- Quick Action Buttons -->
+        <div class="flex items-center space-x-3">
+          <button onclick="window.print()" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-gradient-to-r from-brand-600 to-cyan-500 text-white shadow-md hover:shadow-cyan-500/20 hover:opacity-95 transition flex items-center space-x-2">
+            <i class="fa-solid fa-print"></i>
+            <span class="hidden sm:inline">Print / PDF</span>
+          </button>
+          
+          <button id="contact-btn" onclick="copyContactSummary()" class="px-3 py-2 text-xs sm:text-sm font-medium rounded-lg bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition flex items-center space-x-2">
+            <i class="fa-solid fa-share-nodes text-brand-400"></i>
+            <span class="hidden sm:inline">Share Info</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+
+    <!-- HERO SECTION / HEADER CARDS -->
+    <section id="hero" class="glass-card rounded-2xl p-6 sm:p-10 border border-slate-800 relative overflow-hidden">
+      <!-- Cyber background decoration -->
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+        <div class="space-y-4 max-w-3xl">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Active Security Clearance & Consultant</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            VIPIN CHAUHAN
+          </h1>
+          
+          <p class="text-xl sm:text-2xl font-semibold text-slate-300">
+            Senior Network Security Consultant & Enterprise Infrastructure Specialist
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+            Over <span class="text-brand-400 font-semibold">16+ years</span> of core technical expertise across Enterprise Network Security, Multi-Vendor Firewalls, Threat Mitigation, VPN Implementations, Cloud Proxies, and Telecom Operations. Specializing in high-availability security posture design, firewall migrations, and 24/7 mission-critical SOC operations.
+          </p>
+
+          <!-- Contact Badges Grid -->
+          <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <div class="flex items-center space-x-3 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 text-xs font-mono">
+              <i class="fa-solid fa-location-dot text-brand-400 text-sm w-4 text-center"></i>
+              <span class="truncate">Noida / Gurugram / Delhi NCR</span>
+            </div>
+
+            <div onclick="copyText('vipin.security@example.com', 'Email Address')" class="cursor-pointer group flex items-center space-x-3 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 hover:border-brand-500/50 transition text-xs font-mono">
+              <i class="fa-solid fa-envelope text-cyan-400 text-sm w-4 text-center group-hover:scale-110 transition"></i>
+              <span class="truncate">Contact via HCLTech / Professional</span>
+            </div>
+
+            <div class="flex items-center space-x-3 p-2.5 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 text-xs font-mono">
+              <i class="fa-solid fa-shield-halved text-emerald-400 text-sm w-4 text-center"></i>
+              <span>Full-Time Security Specialist</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Experience Metric Badges -->
+        <div class="w-full lg:w-auto grid grid-cols-2 lg:grid-cols-1 gap-4 shrink-0">
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-400 font-mono">16+</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Years Experience</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+            <div class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-mono">3 Tech</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider font-medium mt-1">Global Vendor Badges</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SHOWCASE SECTION -->
+    <section id="certifications" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+            <i class="fa-solid fa-award text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white">Vendor Certifications</h2>
+            <p class="text-xs text-slate-400">Industry recognized credentials & license details</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Cisco Card -->
+        <div class="glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-network-wired text-brand-400 text-2xl"></i>
+                <h3 class="text-lg font-bold text-white">Cisco Systems</h3>
+              </div>
+              <span class="text-xs font-mono bg-brand-500/10 text-brand-400 px-2.5 py-1 rounded border border-brand-500/20">CSCO12238665</span>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold">CCNP Route</span>
+                <span class="text-xs text-slate-400 font-mono">(300-101)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold">CCNA Security</span>
+                <span class="text-xs text-slate-400 font-mono">(210-260)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold">CCNA R&S</span>
+                <span class="text-xs text-slate-400 font-mono">(640-802)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 flex justify-between items-center">
+            <span>Routing & Security Track</span>
+            <i class="fa-solid fa-shield text-slate-600"></i>
+          </div>
+        </div>
+
+        <!-- Fortinet Card -->
+        <div class="glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-lock text-red-400 text-2xl"></i>
+                <h3 class="text-lg font-bold text-white">Fortinet</h3>
+              </div>
+              <span class="text-xs font-mono bg-red-500/10 text-red-400 px-2.5 py-1 rounded border border-red-500/20">FORT102603</span>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold">NSE 4</span>
+                <span class="text-xs text-slate-400 font-mono">(FortiOS 7.0)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>NSE 3 - Network Security Associate</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span>NSE 2 & NSE 1 Certifications</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 flex justify-between items-center">
+            <span>FortiGate & FortiOS Specialist</span>
+            <i class="fa-solid fa-fire-flame-curved text-slate-600"></i>
+          </div>
+        </div>
+
+        <!-- Check Point Card -->
+        <div class="glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-key text-cyan-400 text-2xl"></i>
+                <h3 class="text-lg font-bold text-white">Check Point</h3>
+              </div>
+              <span class="text-xs font-mono bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20">CP0000096311</span>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                <span class="font-semibold">CCSA</span>
+                <span class="text-xs text-slate-400 font-mono">(Check Point Certified Security Administrator R77)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400 flex justify-between items-center">
+            <span>MDS & Security Gateway Track</span>
+            <i class="fa-solid fa-server text-slate-600"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE SECTION -->
+    <section id="experience" class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+            <i class="fa-solid fa-briefcase text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white">Work Experience</h2>
+            <p class="text-xs text-slate-400">16+ years timeline of enterprise roles and clients</p>
+          </div>
+        </div>
+
+        <!-- Interactive Category Filter Buttons -->
+        <div class="flex flex-wrap gap-2 no-print" id="experience-filters">
+          <button onclick="filterExperience('all')" class="exp-filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white shadow-sm transition">All Roles</button>
+          <button onclick="filterExperience('security')" class="exp-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Network Security</button>
+          <button onclick="filterExperience('telecom')" class="exp-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Telecom & Infrastructure</button>
+        </div>
+      </div>
+
+      <!-- Experience Cards Container -->
+      <div class="space-y-6">
+
+        <!-- Role 1: HCLTech -->
+        <div class="exp-card security glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">Current Role</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-500/10 text-brand-400">Security</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Network Security Consultant</h3>
+              <p class="text-brand-400 font-medium text-sm">HCLTech <span class="text-slate-400 text-xs">| Noida, Sector-126</span></p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                7th March 2024 – Present
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Leading network security consulting and architecture alignment for enterprise clients at HCLTech Noida campus.</li>
+            <li>Directing device lifecycle management, firewall migrations, policy optimizations, and multi-cloud perimeter security enforcement.</li>
+            <li>Providing Tier-3 escalation, incident response, and strategic security advisory across enterprise environments.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2: BT eServ -->
+        <div class="exp-card security glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-500/10 text-brand-400">Design & Implementation</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Security Engineer Professional</h3>
+              <p class="text-brand-400 font-medium text-sm">BT eServ India Pvt Ltd <span class="text-slate-400 text-xs">| Gurugram, DLF Phase-3</span></p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                1st Nov 2021 – 5th Mar 2024
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Core member of the Design & Implementation engineering team delivering complex security solutions.</li>
+            <li>Executed high-impact firewall integrations using Palo Alto (Panorama), Fortigate (FortiManager), and Cisco Firepower (FMC).</li>
+            <li>Managed RSA and Gemalto MFA multi-factor authentication systems and Menlo Cloud Proxy integrations.</li>
+            <li>Led major firewall migration projects including complete Cisco ASA to Fortigate cutovers.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3: NTT DATA -->
+        <div class="exp-card security glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-500/10 text-brand-400">SOC Operations</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Network Security Senior Specialist</h3>
+              <p class="text-brand-400 font-medium text-sm">NTT DATA Information Processing Services <span class="text-slate-400 text-xs">| Noida, Sector-144</span></p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                22nd Feb 2019 – 30th Oct 2021
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Managed Security Operations (SOC) protecting global client networks against threats and perimeter vulnerabilities.</li>
+            <li>Administered Palo Alto Firewalls, Check Point MDS, Cisco ASA, and Cisco Firepower FTD infrastructure.</li>
+            <li>Configured and troubleshot complex Site-to-Site IPSec VPN tunnels across multi-vendor devices.</li>
+            <li>Provided 24*7 on-call incident response for High Severity (P1/P2) service-affecting security incidents.</li>
+            <li>Performed OS / Hotfix upgrades and packet capture (PCAP) deep analysis for root cause determination.</li>
+          </ul>
+        </div>
+
+        <!-- Role 4: HP India -->
+        <div class="exp-card security glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-500/10 text-brand-400">Enterprise Operations</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Network Security Engineer</h3>
+              <p class="text-brand-400 font-medium text-sm">Hewlett Packard India <span class="text-slate-400 text-xs">(Payroll of Softenger & NetConnect Global)</span></p>
+              <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-building-user me-1"></i>Client Deployments: ONGC (Laxmi Nagar, Delhi) & FIS Global (Gurugram)</p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                13th Jul 2013 – 20th Feb 2019
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Maintained enterprise firewall security posture, router/switch configurations, and WAN link performance.</li>
+            <li>Monitored and remediated intranet/internet traffic issues using WhatsUp Gold, MRTG, PRTG, and Cacti.</li>
+            <li>Actively participated in corporate Disaster Recovery Exercises (DRE) and vendor patch updates.</li>
+            <li>Administered Cisco Routers (7604, 2811), Huawei Routers (AR-49-45), and Cisco Switches (C2960, C3560, C3750).</li>
+          </ul>
+        </div>
+
+        <!-- Role 5: Ericsson -->
+        <div class="exp-card telecom glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-400">Telecom & Routing</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Network Engineer</h3>
+              <p class="text-brand-400 font-medium text-sm">Ericsson India Pvt Ltd <span class="text-slate-400 text-xs">(Payroll of MMCPL & Tics Group)</span></p>
+              <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-tower-cell me-1"></i>Client Deployments: SSTL (MTS Meerut), Bharti Airtel, ETISALAT (Delhi Zone)</p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                5th Apr 2010 – 8th Jul 2013
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Managed MW link configurations, VLANs on Huawei & Cisco routers for site integration & NMS visibility.</li>
+            <li>Operated Tejas MUX (TJMC series) and Huawei Optix RTN microwave links.</li>
+            <li>Executed E1 augmentations, traffic changeovers (PDH to SDH), and Ericsson BTS integrations (RBS 2000 series).</li>
+          </ul>
+        </div>
+
+        <!-- Role 6: Shivam Infocom -->
+        <div class="exp-card telecom glass-card glass-card-hover rounded-xl p-6 border border-slate-800 relative transition-all duration-300">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-400">Project Operations</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mt-1">Telecom Project Engineer</h3>
+              <p class="text-brand-400 font-medium text-sm">Shivam Infocom Pvt. Ltd. <span class="text-slate-400 text-xs">| Delhi NCR</span></p>
+              <p class="text-xs text-slate-400 mt-0.5"><i class="fa-solid fa-diagram-project me-1"></i>Clients: Vodafone, Nokia, Indus Towers</p>
+            </div>
+            <div class="text-left md:text-right">
+              <span class="inline-block px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs font-medium">
+                1st Jul 2008 – 4th Apr 2010
+              </span>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300 list-disc list-inside">
+            <li>Commissioned and integrated microwave links for Nokia, NEC, and Ericsson across Delhi NCR.</li>
+            <li>Conducted VSWR measurements using Bird & Anritsu site masters and performed GSM expansions.</li>
+            <li>Executed site surveys and upgrades for Vodafone and Indus Towers.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS & DOMAIN EXPERTISE SECTION -->
+    <section id="skills" class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+            <i class="fa-solid fa-layer-group text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-white">Functional Skills & Technologies</h2>
+            <p class="text-xs text-slate-400">Categorized hands-on domain competencies</p>
+          </div>
+        </div>
+
+        <!-- Interactive Skill Search Input -->
+        <div class="relative w-full md:w-64 no-print">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+          <input type="text" id="skill-search" oninput="searchSkills()" placeholder="Search skills (e.g. Palo Alto, BGP)..." class="w-full pl-9 pr-4 py-2 bg-slate-900/80 border border-slate-800 rounded-lg text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 transition">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="skills-grid">
+
+        <!-- Skill Category 1 -->
+        <div class="skill-group glass-card rounded-xl p-6 border border-slate-800">
+          <div class="flex items-center space-x-2 mb-4 text-brand-400 font-bold text-base border-b border-slate-800 pb-2">
+            <i class="fa-solid fa-fire-extinguisher"></i>
+            <h3>Firewall Technologies & Centralized Managers</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Palo Alto Next-Gen</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Panorama Management</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Fortigate / FortiOS 7</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">FortiManager</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Check Point Security</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Check Point MDS</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Cisco ASA</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Cisco Firepower (FTD / FMC)</span>
+          </div>
+        </div>
+
+        <!-- Skill Category 2 -->
+        <div class="skill-group glass-card rounded-xl p-6 border border-slate-800">
+          <div class="flex items-center space-x-2 mb-4 text-cyan-400 font-bold text-base border-b border-slate-800 pb-2">
+            <i class="fa-solid fa-user-shield"></i>
+            <h3>Identity, Proxy & MFA Security</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">RSA Authentication Manager</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Gemalto MFA</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Menlo Cloud Proxy</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">IPSec Site-to-Site VPN</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Layer 7 Inspection</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">CEH Lab Practice</span>
+          </div>
+        </div>
+
+        <!-- Skill Category 3 -->
+        <div class="skill-group glass-card rounded-xl p-6 border border-slate-800">
+          <div class="flex items-center space-x-2 mb-4 text-emerald-400 font-bold text-base border-b border-slate-800 pb-2">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>Routing, Switching & Protocols</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Cisco Routers (7604, 2811)</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Cisco Switches (C2960, C3560, 3750)</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Huawei Routers & Switches</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">LAN/WAN Architecture</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">VLAN / VTP / STP</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Ether-Channels (LACP / PAGP)</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">TCP/IP, HTTP/HTTPS</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Linux CLI Basics</span>
+          </div>
+        </div>
+
+        <!-- Skill Category 4 -->
+        <div class="skill-group glass-card rounded-xl p-6 border border-slate-800">
+          <div class="flex items-center space-x-2 mb-4 text-purple-400 font-bold text-base border-b border-slate-800 pb-2">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Monitoring & Network Operations</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Packet Capture & PCAP Analysis</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">MRTG & PRTG Monitoring</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">WhatsUp Gold Professional</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Cacti WAN Traffic Analysis</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">NetFlow & Syslog Analysis</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">Disaster Recovery Exercises (DRE)</span>
+            <span class="skill-tag px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 text-xs font-mono">24/7 Severity Incident Management</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & QUALIFICATIONS SECTION -->
+    <section id="education" class="space-y-6">
+      <div class="flex items-center space-x-3">
+        <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+          <i class="fa-solid fa-graduation-cap text-lg"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white">Qualifications & Academic Degrees</h2>
+          <p class="text-xs text-slate-400">Formal educational background</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- MBA -->
+        <div class="glass-card glass-card-hover rounded-xl p-5 border border-slate-800">
+          <div class="text-brand-400 text-2xl font-bold font-mono">MBA</div>
+          <div class="text-white font-semibold text-sm mt-1">IT & Marketing</div>
+          <div class="text-xs text-slate-400 mt-2 flex items-center space-x-1">
+            <i class="fa-solid fa-university text-[10px]"></i>
+            <span>Subharti University</span>
+          </div>
+        </div>
+
+        <!-- MCA -->
+        <div class="glass-card glass-card-hover rounded-xl p-5 border border-slate-800">
+          <div class="text-brand-400 text-2xl font-bold font-mono">MCA</div>
+          <div class="text-white font-semibold text-sm mt-1">Master of Computer Applications</div>
+          <div class="text-xs text-slate-400 mt-2 flex items-center space-x-1">
+            <i class="fa-solid fa-university text-[10px]"></i>
+            <span>Jaipur National University</span>
+          </div>
+        </div>
+
+        <!-- Graduation -->
+        <div class="glass-card glass-card-hover rounded-xl p-5 border border-slate-800">
+          <div class="text-brand-400 text-2xl font-bold font-mono">Graduation</div>
+          <div class="text-white font-semibold text-sm mt-1">Bachelor's Degree</div>
+          <div class="text-xs text-slate-400 mt-2 flex items-center space-x-1">
+            <i class="fa-solid fa-university text-[10px]"></i>
+            <span>Delhi University</span>
+          </div>
+        </div>
+
+        <!-- Diploma -->
+        <div class="glass-card glass-card-hover rounded-xl p-5 border border-slate-800">
+          <div class="text-brand-400 text-2xl font-bold font-mono">Diploma</div>
+          <div class="text-white font-semibold text-sm mt-1">Electronics & Communication</div>
+          <div class="text-xs text-slate-400 mt-2 flex items-center space-x-1">
+            <i class="fa-solid fa-university text-[10px]"></i>
+            <span>Board of Technical Education (B.T.E.)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / SUMMARY METRICS -->
+    <footer class="glass-card rounded-2xl p-6 border border-slate-800 text-center space-y-4 no-print">
+      <div class="flex justify-center items-center space-x-4">
+        <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+        <span class="text-xs font-mono text-slate-400">Vipin Chauhan • Network Security Consultant • Professional Interactive Resume</span>
+        <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+      </div>
+      <p class="text-xs text-slate-500">Designed with modern responsive glassmorphism aesthetic for high visibility and printable export.</p>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Toast Notification System
+    function showToast(message, icon = 'fa-circle-check') {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastMessage.textContent = message;
+      toastIcon.className = `fa-solid ${icon}`;
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Copy Text Helper using execCommand for web preview compatibility
+    function copyText(text, label) {
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast(`Copied ${label} to clipboard!`, 'fa-copy');
+    }
+
+    // Copy Summary Action
+    function copyContactSummary() {
+      const summaryText = `VIPIN CHAUHAN | Senior Network Security Consultant
+Experience: 16+ Years (HCLTech, BT eServ, NTT DATA, HP India)
+Certifications: Cisco CCNP Route/CCNA Security, Fortinet NSE4, Checkpoint CCSA
+Location: Noida / Gurugram / Delhi NCR`;
+
+      copyText(summaryText, 'Profile Summary');
+    }
+
+    // Interactive Experience Filter
+    function filterExperience(category) {
+      const cards = document.querySelectorAll('.exp-card');
+      const filterBtns = document.querySelectorAll('.exp-filter-btn');
+
+      // Update button styling
+      filterBtns.forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-brand-600', 'text-white');
+
+      // Filter card visibility
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 200);
+        }
+      });
+    }
+
+    // Interactive Skill Search Filter
+    function searchSkills() {
+      const query = document.getElementById('skill-search').value.toLowerCase();
+      const skillTags = document.querySelectorAll('.skill-tag');
+
+      skillTags.forEach(tag => {
+        const text = tag.textContent.toLowerCase();
+        if (text.includes(query)) {
+          tag.classList.remove('opacity-20', 'bg-slate-900');
+          tag.classList.add('bg-brand-600/30', 'border-brand-500/50', 'text-white');
+        } else if (query === '') {
+          tag.classList.remove('opacity-20', 'bg-brand-600/30', 'border-brand-500/50', 'text-white');
+          tag.classList.add('bg-slate-900');
+        } else {
+          tag.classList.add('opacity-20');
+          tag.classList.remove('bg-brand-600/30', 'border-brand-500/50', 'text-white');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
